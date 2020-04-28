@@ -418,7 +418,7 @@ img:hover{
   <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
 
     <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
-                      <img src="png/jj.jpeg" width="100%" height="40%">
+                     
 
       <div class="kt-login__container">
         <div class="kt-login__logo">
@@ -433,7 +433,7 @@ img:hover{
          
             
           </div>
-          <form class="kt-form" method="post" action="">
+          <form class="kt-form" method="post" action="" style="margin-top: 140px;">
             <div class="input-group">
               <input class="form-control" type="text"  placeholder="Email" id="email" name="email" autocomplete="off">
             </div>
