@@ -13,7 +13,7 @@
                {
                
                  // echo "Sucessfully";
-                header("location:/officeofops/info/dashboard.php");
+                header("location:/tncorona/info/dashboard");
                // break;
                }
              
@@ -39,7 +39,7 @@
                if($rows['ran']==$ran)
                {
                   echo "Sucessfully";
-                header("location:/officeofops/case/followup.php?ran=".$rows['ran']);
+                header("location:/tncorona/case/followup?ran=".$rows['ran']);
                }
              }
            
@@ -52,7 +52,7 @@
                if($rows['ran']==$ran)
                {
                   echo "Sucessfully";
-                header("location:/officeofops/info/followup.php?ran=".$rows['ran']);
+                header("location:/tncorona/info/followup?ran=".$rows['ran']);
                }
              }
                }
@@ -90,7 +90,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         echo "The file ". basename( $_FILES["Artifacts"]["name"]). " has been uploaded.";
             }
               echo "successfully";
-           header("location:./info/infocode.php");
+           header("location:./info/infocode");
         }
         else
         {

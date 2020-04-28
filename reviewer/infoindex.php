@@ -500,7 +500,7 @@ $("#people").hide();
               showLoaderOnConfirm: true
             }, function () {
               setTimeout(function () {
-                 window.location="/officeofops/reviewer/report.php";
+                 window.location="/tncorona/reviewer/report.php";
               }, 5000);
             });
            

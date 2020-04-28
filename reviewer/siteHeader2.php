@@ -156,9 +156,9 @@ a
                  $.ajax({
                         dataType: "json",
                         type: "POST",
-                        url: "/officeofops/login.php"
+                        url: "/tncorona/login.php"
                          });
-                 window.location="/officeofops/login.php";
+                 window.location="/tncorona/login.php";
             }
 </script>
 

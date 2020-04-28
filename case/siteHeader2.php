@@ -180,9 +180,9 @@ a
                  $.ajax({
                         dataType: "json",
                         type: "POST",
-                        url: "/officeofops/intro.php"
+                        url: "/tncorona/intro.php"
                          });
-                 window.location="/officeofops/intro.php";
+                 window.location="/tncorona/intro.php";
             }
 </script>
 

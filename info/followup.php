@@ -11,7 +11,7 @@
                if($rows['ran']==$ran )
                {
                   echo "Sucessfully";
-                header("location:/officeofops/case/followup.php?ran=".$rows['ran']);
+                header("location:/tncorona/case/followup.php?ran=".$rows['ran']);
                }
              }
            
@@ -24,7 +24,7 @@
                if($rows['ran']==$ran)
                {
                   echo "Sucessfully";
-                header("location:/officeofops/info/followup.php?ran=".$rows['ran']);
+                header("location:/tncorona/info/followup.php?ran=".$rows['ran']);
                }
              }
                }
@@ -403,7 +403,7 @@ width:100%;
 <div class="container">
 
 
-<button type="button" class="btn btn-info" onclick="window.location.href='/officeofops/intro.php'" style="float: right;background-color: #034ea2;"> << Back</button>
+<button type="button" class="btn btn-info" onclick="window.location.href='/tncorona/intro.php'" style="float: right;background-color: #034ea2;"> << Back</button>
 </div>
              
 
