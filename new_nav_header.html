@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+      #header_design{
+        background-color: #F7EFE3;  
+       
+        height: 40px;
+
+      }
+
+      @font-face{
+        font-family: covid;
+        src:url(./assets/fonts/covid.ttf);
+      }
+
+
+      #covid19_heading{
+        font-family: covid;
+        font-size: 22px;
+        color: #56B455;
+      }
+
+
+
+
+      @media only screen and (max-width: 599px){
+          #header_design{
+            height: 95px;
+          }
+
+          #header_cm_image{
+            margin-top: 22px;
+          }
+
+          #text_head{
+            visibility: hidden;
+          }
+      }
+
+    </style>
+
+    <style type="text/css">
+     /*.kt-sc__bottom .nav-tabs .nav-item .nav-link, .kt-sc-2 .kt-sc__bottom .nav-tabs .nav-item a.nav-link {*/
+    /*font-size: 1.2rem;*/
+    /*padding: 0 0 0.5rem;*/
+    /*font-weight: 500;*/
+    /*color: #48465b;*/
+    /*margin-top: 5px;*/
+    /*border-bottom: 2px solid red;*/
+    /*vertical-align: text-top*/
+/*}*/
+
+
+.nav-tabs.nav-tabs-line {
+    border-bottom: 1px solid transparent;
+
+
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-bottom:1px solid #0e1d82;
+}
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 70%;
+  margin-top:-100px;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color:  #000080;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  cursor: pointer;
+
+
+}
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+ 
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+  @media only screen and (min-width: 768px) {
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+ 
+}
+ @media only screen and (max-width: 767px) {
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+}
+@media only screen and (max-width: 767px) {
+  .kt-header__topbar-wrapper{
+    display:none;
+  }
+  @media(max-width: 767px) {
+    .nav-item1{
+      display:none;
+    }
+  }
+  
+.goog-te-gadget{
+           float: right;      
+          }
+.cov{
+  display: none;
+}
+.let{
+  margin-top: -40px;
+}
+}
+
+.goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-link:hover, .goog-logo-link:active{
+              visibility: hidden;
+          }
+         
+          #demo1{
+              cursor:pointer;
+          }
+          .goog-te-banner-frame.skiptranslate {
+          display: none;
+          }
+.goog-te-combo  {padding: 1px 1px 1px 15px;-moz-appearance: none; appearance: none; -webkit-appearance: none;border: 1px solid transparent;box-sizing: border-box;border-bottom:1px solid #afd135;font-size: 1.2rem;font-weight: 500;color:black;background-color:white;}
+
+.goog-te-combo:hover{
+  background-color: white;
+  border:2px solid #afd135; 
+  color: #48465b;
+}
+
+</style>
+<style>
+ .nav-item:hover
+ {
+  border-bottom:3px solid #034ea2;
+ }
+    @media(max-width: 1024px) {
+    .drop{
+      display:none;
+    }
+   }
+   @media(max-width: 1024px) {
+    .cov{
+      display:none;
+    }
+    }
+   }
+   
+
+   
+  </style>
+  <style>
+    .kt-header__topbar-icon:hover{
+   color: white;
+
+  </style>
+ 
+  </head>
+  <body>
+    
+    <!-- modal section -->
+    <div id="id02" class="modal">
+ 
+  <form class="modal-content" action="" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+ 
+    </div>
+
+    <div class="container" style="line-height:350%;color:#525150;">
+      <label for="email" style=" font-size: 1.2rem;"  i class="fa fa-file">&nbsp;&nbsp;<b>SPEAK NUMBER:</b></label>
+       <input class="form-control" type="text"  placeholder="info number" id="email" name="ran" autocomplete="off"><br>
+
+      <!-- <label for="password" style=" font-size: 1.2rem;color:#525150;"  i class="fa fa-key">&nbsp;&nbsp;<b>SECRETKEY:</b></label>
+    <input class="form-control" type="text" placeholder="secretkey" name="secretkey" id="password"><br><br> -->
+        <center>
+      <button type="submit" name="track" style="background: #afd135;border-radius: 8px;width:40%;height:10%;border:2px solid  #afd135;font-weight: 500;color: white;">SUBMIT</button>
+      </center>
+     
+    </div>
+
+
+  </form>
+</div>
+    <!-- modal section -->
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="margin-top: -10px;">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <button class="btn btn-success" onclick="document.getElementById('id02').style.display='block'" style="background: transparent;border-radius: 26px;border:2px solid #afd135;font-weight: 500;color: #FFFFFF; margin-top: 9px;">TRACK</button>
+      </li>
+      
+   
+  </div>
+</nav>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<script>
+
+var modal = document.getElementById('id01');
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var modal = document.getElementById('id02');
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        // modal.style.display = "none";
+    }
+}
+</script>
+   <script type="text/javascript">
+      var phone = document.getElementById('ran'),
+    cleanPhoneNumber;
+
+cleanPhoneNumber= function(e) {
+    e.preventDefault();
+    var pastedText = '';
+    if (window.clipboardData && window.clipboardData.getData) { // IE
+        pastedText = window.clipboardData.getData('Text');
+      } else if (e.clipboardData && e.clipboardData.getData) {
+        pastedText = e.clipboardData.getData('text/plain');
+      }
+    this.value = pastedText.replace(/\D/g, '');
+};
+
+phone.onpaste = cleanPhoneNumber;
+    </script>
+    </script>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  document.querySelector('.goog-te-gadget').setAttribute('style', 'font-size: 0');
+}
+</script>

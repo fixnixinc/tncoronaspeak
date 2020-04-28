@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8">
+	<title>CoronaSpeak Analytics</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="assets/css/ready.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<link rel="stylesheet" href="./assets/flags/country-flag.css">
+	<script src="./assets/flags/country-flag.js"></script>
+	<script src="assets/static/country_to_code.json"></script>
+	<script src="assets/static/code_to_country.json"></script>
+	<script src="assets/static/latlng.json"></script>
+	<script src="assets/data/data.json"></script>
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<script src="assets/js/today.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a  class="logo" href="https://www.coronaspeak.com/">
+					CoronaSpeak
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item hidden-caret">
+							<a class="nav-link" href="https://www.coronaspeak.com/tncorona/who.php">WHO</a>
+							<a class="nav-link" href="https://www.coronaspeak.com/tncorona/news.php">News</a>
+							<a class="nav-link" href="https://www.coronaspeak.com/tncorona/contributors.php">Contributors</a>
+						</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<ul class="nav">
+						<li class="nav-item update-pro">
+							<button  data-toggle="modal" data-target="#modalUpdate">
+								<i class="la la-newspaper-o"></i>
+								<p> Latest Updates</p>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<h4 class="page-title">Global Data</h4>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card card-stats card-warning">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-users"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Confirmed Cases</p>
+													<h4 class="card-title" id="confirmed_cases">488,426</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4" onmouseover="this.style.cursor='pointer'" >
+								<div class="card card-stats">
+									<div class="card-body " style="background-color:#59d05d; color:white" onmouseover="this.bgColor='red'">
+										<div class="row" >
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-users"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" style="color:white">Recovered</p>
+													<h4 class="card-title" style="color:white" id="recovered_cases">117,604</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card card-stats card-danger" onmouseover="this.style.cursor='pointer'">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-users"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Death</p>
+													<h4 class="card-title" id="death_cases">22,067</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+<!-- 							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center icon-warning">
+													<i class="la la-pie-chart text-warning"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Number</p>
+													<h4 class="card-title">150GB</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-bar-chart text-success"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Revenue</p>
+													<h4 class="card-title">$ 1,345</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-times-circle-o text-danger"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Errors</p>
+													<h4 class="card-title">23</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-heart-o text-primary"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Followers</p>
+													<h4 class="card-title">+45K</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+						</div>
+						<div class="row">
+							<div class="col-md-9" id="worldmap">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">World Cases</h4>
+									</div>
+									<div class="card-body">
+										<div id="regions_div" >
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Top 10 countries</h4>		
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+										<table class="table" id="my_table">
+											<thead>
+												<tr>
+												<th scope="col">#</th>
+												<th scope="col">Country</th>
+												<th scope="col">Confirmed</th>
+												<th scope="col">Death</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+											
+											</tbody>										
+										</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<style>
+							/* For the table */
+							thead, tbody { display: block; }
+							tbody {
+								height: 300px;       /* Just for the demo          */
+								overflow-y: auto;    /* Trigger vertical scroll    */
+								overflow-x: hidden;  /* Hide the horizontal scroll */
+							}
+							table th {
+    							width: auto !important;
+							}
+							</style>
+						</div>
+						<div class="row">
+						
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Timeline of spread</h4>
+										<p class="card-category">
+										Count of number of Confirmed cases on each day.</p>
+									</div>
+									<div class="card-body">
+										<svg id="my_dataviz_1"></svg>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Timeline of spread</h4>
+										<p class="card-category">
+										Count of number of Death cases on each day.</p>
+									</div>
+									<div class="card-body">
+										<svg id="my_dataviz_2"></svg>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+					<div class="row">
+							<div class="col-md-4" id="twitter-box">
+								<div class="card">
+									<div class="card-body">		
+								<a class="twitter-timeline" href="https://twitter.com/fixrnix" data-chrome="nofooter noborders" data-width="480" data-height="390">Tweets by fixrnix</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+									</div>
+									<div class="card-footer">
+								<a href="https://twitter.com/fixrnix?ref_src=twsrc%5Etfw" class="twitter-follow-button nav-link" data-show-count="false">Follow @fixrnix</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4" id="corona_logo">
+								<div class="card">
+									<div class="card-body">		
+									<a href="https://www.coronaspeak.com/tncorona/option.php"></a>
+               
+									<button type="button" name="button" class="btn btn-default anna" onclick="fun1()">
+									<img src="./assets/img/coronaLogo.png" class="face" id="face">        
+									</button>
+									<style>
+									/* Animating the face*/
+									.face:hover {
+									animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+									transform: translate3d(0, 0, 0);
+									backface-visibility: hidden;
+									perspective: 1000px;
+									}									
+									</style>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card">
+									<div class="card-body">		
+											<a href="https://www.coronaspeak.com/tncorona/contributors.php"></a>
+											<button type="button" name="button" class="btn btn-default anna" onclick="fun2()">
+											<img src="./assets/img/contrinbutors.png" class="face" id="fface">        
+											</button>
+											<style>
+											/* Animating the face*/
+											.face:hover {
+											animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+											transform: translate3d(0, 0, 0);
+											backface-visibility: hidden;
+											perspective: 1000px;
+											}									
+											</style>
+										
+									</div>
+								</div>
+							</div>
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<p class="nav-link">
+									The open initiative of 
+									<a  href="https://nixwhistle.com/">
+										NixWhistle Inc
+									</a>
+									</p>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="fa fa-facebook nav-link"></a>
+									<style>
+									/* Facebook */
+									.fa-facebook {
+									  background: #3B5998;
+									  color: white;
+									}
+									</style>
+								</li>
+								<li class="nav-item">
+									<a href="https://www.linkedin.com/showcase/coronaspeak" class="fa fa-linkedin nav-link"></a>
+									<style>
+									/* Facebook */
+									.fa-facebook {
+									  background: #3B5998;
+									  color: white;
+									}
+									</style>
+									
+								</li>
+								<li class="navitem">
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+	</body>
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/anna.js"></script>
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="assets/js/graph.js"></script>
+<script src="assets/js/graph2.js"></script>
+<script src="assets/js/table.js"></script>
+<script>
+	$(".th").css("width",document.getElementById("corona_logo").clientWidth)
+	$(".anna").css("height","450px");
+	$(".anna").css("width",document.getElementById("corona_logo").clientWidth*0.8);	
+	console.log(document.getElementById("corona_logo").clientHeight + "ANNA	");
+	$(".face").css("height",document.getElementById("corona_logo").clientHeight*0.7);
+	$(".face").css("width",document.getElementById("corona_logo").clientWidth*0.7);
+	
+	$(window).resize(
+		function resize_my(){
+			// console.log("BETI");
+			$(".anna").css("width",document.getElementById("corona_logo").clientWidth*0.8);
+			$(".face").css("height",document.getElementById("corona_logo").clientHeight*0.7);
+			$(".face").css("width",document.getElementById("corona_logo").clientWidth*0.7);
+			console.log($("#regions_div").css("width"));
+			drawRegionsMap();
+			// $("#my_dataviz_1").css("height","400");//document.getElementById("corona_logo").clientHeight*0.28)
+		}
+	)
+</script>
+</html>
