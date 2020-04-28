@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head><!--begin::Base Path (base relative path for assets of this page) -->
-<base href="/officeofops/"><!--end::Base Path -->
+<base href="/tncorona/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
         <title>Reviewer</title>

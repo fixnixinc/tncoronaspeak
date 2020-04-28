@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title> Side Menu</title>
-	<base href="/officeofops/">
+	<base href="/tncorona/">
 </head>
 <body>
 

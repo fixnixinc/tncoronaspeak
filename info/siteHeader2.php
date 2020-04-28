@@ -4,7 +4,7 @@
 <html lang="en" >
     <!-- begin::Head -->
     <head>
-<base href="/officeofops/">
+<base href="/tncorona/">
         <meta charset="utf-8"/>
 
         <title>Info Dashboard</title>
